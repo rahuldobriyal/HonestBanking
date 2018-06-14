@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AzureCloudDB-Web.config Connection String" description="AzureCloudDB Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:feetbx6l7v.database.windows.net,1433;Initial Catalog=HonestBankDB;Persist Security Info=False;User ID=DBAdmin;Password=Test@1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rahul\.dobriyal\\Documents\\Visual\ Studio\ 2013\\Projects\\HonestBank\\HonestBank\.UI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AzureCloudDB']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="DefaultConnection_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rahul\.dobriyal\\Documents\\Visual\ Studio\ 2013\\Projects\\HonestBank\\HonestBank\.UI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="HonestBank.Domain.Data.BankingDBEntities-Web.config Connection String" description="HonestBank.Domain.Data.BankingDBEntities Connection String used in web.config by the application to access the database." defaultValue="HonestBank.Domain.Data.BankingDBEntities_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rahul\.dobriyal\\Documents\\Visual\ Studio\ 2013\\Projects\\HonestBank\\HonestBank\.UI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HonestBank.Domain.Data.BankingDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

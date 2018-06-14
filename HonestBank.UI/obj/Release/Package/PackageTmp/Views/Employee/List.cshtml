@@ -1,0 +1,68 @@
+﻿@model IEnumerable<HonestBank.Domain.ModelData.EmployeeModel>
+
+@{
+    ViewBag.Title = "Admin : Employees";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3><strong>Employees</strong></h3>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="search-bar">
+                    @using (Html.BeginForm("List", "Employee", FormMethod.Get))
+                    {
+                        @: <strong>Search Employee : </strong>@Html.TextBox("SearchText")
+                        <input type="submit" value="Search" class="search-button" />
+                    }
+                </div>
+            </div>
+            <div class="col-md-4">
+                @Html.ActionLink("Add new Employee", "Add", null,
+new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-right">ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Assigned Branch</th>
+                <th>Assigned Department</th>
+                <th>Manager Name</th>
+                <th>Joining Date</th>
+                <th>Leaving Date</th>
+                <th class="text-center">Status</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-right">@item.EmployeeID</td>
+                    <td>@Html.ActionLink(item.FirstName + " " + item.LastName, "Edit", @item)</td>
+                    <td>@item.DesignationName</td>
+                    <td>@item.AssignedBranchName</td>
+                    <td>@item.DepartmentName</td>
+                    <td>@item.ManagerName</td>
+                    <td>@item.JoiningDate.ToString("d")</td>
+                    <td>@item.LeavingDate</td>
+                    <td class="text-center">
+                        @Html.ActionLink(item.Status.ToString(), "Delete", new { id = item.EmployeeID },
+
+               new { onclick = "return confirm('Are you sure you want to delete?');" })
+                        @*@using (Html.BeginForm("Delete", "Admin", @item))
+                            {
+
+                                @Html.Hidden("EmployeeID", item.EmployeeID)
+                                <input type="submit"
+                                       class="btn btn-default btn-xs"
+                                       value="Delete" />
+                            }*@
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

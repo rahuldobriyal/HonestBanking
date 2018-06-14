@@ -1,0 +1,57 @@
+﻿@model HonestBank.Domain.ModelData.EmployeeModel
+@using HonestBank.Domain.ModelData
+@using HonestBank.Domain.Data
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.FirstName + "" + @Model.LastName;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit Details</h3>
+    </div>
+    @using (Html.BeginForm("EditEmployee", "Employee", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.EmployeeID)
+        foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            <div class="panel-body">
+                <div class="form-group">
+                    @switch(property.PropertyName)
+            { case "DesignationName":
+                    <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @Html.DropDownList("Designations", null, new { @class = "form-control" })
+                    break;
+                case "DepartmentName":
+                    <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @Html.DropDownList("Departments", null, new { @class = "form-control"})
+                    break;
+                case "AssignedBranchName":
+                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @Html.DropDownList("Branches", null,new { @class = "form-control"})
+                    break;
+                case "ManagerName":
+                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @Html.DropDownList("Managers", null, new { @class = "form-control"})
+                    break;
+                case "EmployeeID":
+                    break;
+                default:
+                   <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @Html.TextBox(@property.PropertyName, null,new { @class = "form-control" })
+                    break;
+             }
+                    @Html.ValidationMessage(@property.PropertyName)
+                        </div>
+                </div>
+        }
+    
+                <div class="panel-footer">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    @Html.ActionLink("Cancel and return to List", "List", null, new
+       {
+           @class = "btn btn-default"
+       })
+                </div>
+    }
+            </div>

@@ -1,0 +1,55 @@
+﻿@model HonestBank.Domain.ModelData.BranchModel
+
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit Details</h3>
+    </div>
+    @using (Html.BeginForm("EditBranch", "Branch", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.BranchID)
+        foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            <div class="panel-body">
+                <div class="form-group">
+                    @switch (property.PropertyName)
+                    {
+                        case "BranchID":
+                            break;
+                        case "Accounts":
+                            break;
+                        case "AccountTransactions":
+                            break;
+                        case "Employees":
+                            break;
+                        case "State":
+                        <label>@(property.DisplayName ?? property.PropertyName)</label>
+                        @Html.DropDownList("States", null, new { @class = "form-control" })
+                            break;
+                        case "Address":
+                        <label>@(property.DisplayName ?? property.PropertyName)</label>
+                        @Html.TextArea(@property.PropertyName, null, new { @class = "form-control" })
+                            break;
+                        default:
+                        <label>@(property.DisplayName ?? property.PropertyName)</label>
+                        @Html.TextBox(@property.PropertyName, null, new { @class = "form-control" })
+                            break;
+                    }
+                    @Html.ValidationMessage(@property.PropertyName)
+                </div>
+            </div>
+        }
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "List", null, new
+       {
+           @class = "btn btn-default"
+       })
+        </div>
+    }
+</div>

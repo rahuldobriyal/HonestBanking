@@ -1,0 +1,12 @@
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\HonestBank.Domain.dll.config
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\HonestBank.Domain.dll
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\HonestBank.Domain.pdb
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\AutoMapper.dll
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\EntityFramework.dll
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\AutoMapper.xml
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\EntityFramework.xml
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\obj\Release\HonestBank.Domain.csprojResolveAssemblyReference.cache
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\obj\Release\HonestBank.Domain.dll
+C:\Users\rahul.dobriyal\Documents\Visual Studio 2013\Projects\HonestBank\HonestBank.Domain\obj\Release\HonestBank.Domain.pdb

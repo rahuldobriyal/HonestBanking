@@ -1,0 +1,17 @@
+﻿@using HonestBank.Domain.Data;
+@model IEnumerable<AdminWorkCategory>
+@*@Html.ActionLink("Home", "List", "Products", null,
+new { @class = "btn btn-block btn-default btn-lg" })*@
+@foreach (var category in Model)
+{
+    @Html.RouteLink(category.CategoryName, new
+{
+    controller = category.CategoryName,
+    action = "List"
+}, new
+{
+    @class = "btn btn-block btn-default btn-lg"
+    + (category.CategoryName == ViewBag.SelectedCategory ? " btn-primary" : "")
+
+})
+}
